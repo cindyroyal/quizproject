@@ -1,0 +1,75 @@
+<style>
+#gilmore {
+display: none;
+}
+
+#daily {
+display: none;
+}
+
+#madmen {
+display: none;
+}
+
+#statement {
+display: none;
+}
+
+
+
+
+
+</style>
+
+
+<form  id="form1" action=" "/>
+
+<p>Pick a favorite past TV show.</p>
+
+<select id="thedropdown">
+  <option value="0"></option>
+  <option value="1">Gilmore Girls</option>
+  <option value="2">Daily Show</option>
+  <option value="3">Mad Men</option>
+</select>
+</form>
+
+<p>
+<span id="gilmore"><img src="gilmore.jpg" width="400" /></span>
+<span id="daily"><img src="dailyshow.jpg" width="400" /></span>
+<span id="madmen"><img src="madmen.jpg" width="400" /></span></p>
+<p id="statement">Pick a show</p>
+<script>
+function off() {
+document.getElementById("gilmore").style.display = "none";
+document.getElementById("madmen").style.display = "none";
+document.getElementById("daily").style.display = "none";
+document.getElementById("statement").style.display = "none";
+}
+
+document.getElementById("form1").onchange=function() {
+choice=document.getElementById("thedropdown").value;  
+
+if (choice == 1) {
+off();
+document.getElementById("gilmore").style.display = "block";
+
+}
+if(choice == 2) {
+off();
+document.getElementById("daily").style.display = "block";
+
+}
+else if (choice == 3) {
+off();
+document.getElementById("madmen").style.display = "block";
+}
+else if (choice == 0){
+off();
+document.getElementById("statement").style.display = "block";
+}
+
+return false;
+}
+
+</script>

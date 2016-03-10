@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>How Many Days Until SXSW?</title>
+
+<style>
+body {
+background-color: pink;
+}
+
+#main {
+width: 50%;
+border: 1px gray solid;
+margin: auto;
+padding: 10px;
+background-color: white;
+}
+
+
+</style>
+</head>
+<body>
+<div id="main">
+<h1>How Many Days Until SXSW?</h1>
+<form  id="form1" action=" "/>
+<input type="submit" value="When is SXSW?">
+</form>
+<p></span><span id="i"></span></span></p>
+<p>Today is: <span id="today"></span></p>
+<p id="over"></p>
+</div>
+
+<script>
+// the following lines grab the input from the form and store it in variables
+   today = new Date(); //grabs today in mills
+   msday = 86400000; //milliseconds per day
+   intdate = new Date("2016/03/11");
+   intdays = parseInt((intdate - today)/msday);
+   enddate = new Date("2016/03/20");
+   
+   document.getElementById("today").innerHTML = today;
+   
+	   document.getElementById("form1").onsubmit=function() {
+	   
+	   //what happens if it has passed
+	   if(today >enddate) {
+	   document.getElementById("i").innerHTML = "SXSW 2016 is over. See you in 2017.";
+	   }
+	   
+	    //what happens if it is on
+	   else if(today>=intdate && today <=enddate) {
+	   document.getElementById("i").innerHTML = "SXSW is on!";
+	   }
+
+	   else {
+	   //what happens if it is before
+	   document.getElementById("i").innerHTML = "SXSW starts in " + intdays + " days."; 
+	   } 
+	  
+	   return false; // required to not refresh the page; just leave this here
+	   }// end the submit function
+	  
+
+
+</script>
+</body>
+</html>
